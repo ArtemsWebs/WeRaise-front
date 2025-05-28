@@ -1,19 +1,19 @@
-import { Await, createFileRoute } from '@tanstack/react-router'
-import { createServerFn } from '@tanstack/react-start'
-import { Suspense, useState } from 'react'
+import { Await, createFileRoute } from '@tanstack/react-router';
+import { createServerFn } from '@tanstack/react-start';
+import { Suspense, useState } from 'react';
 
 const personServerFn = createServerFn({ method: 'GET' })
   .validator((d: string) => d)
   .handler(({ data: name }) => {
-    return { name, randomNumber: Math.floor(Math.random() * 100) }
-  })
+    return { name, randomNumber: Math.floor(Math.random() * 100) };
+  });
 
 const slowServerFn = createServerFn({ method: 'GET' })
   .validator((d: string) => d)
   .handler(async ({ data: name }) => {
-    await new Promise((r) => setTimeout(r, 1000))
-    return { name, randomNumber: Math.floor(Math.random() * 100) }
-  })
+    await new Promise((r) => setTimeout(r, 1000));
+    return { name, randomNumber: Math.floor(Math.random() * 100) };
+  });
 
 export const Route = createFileRoute('/deferred')({
   loader: async () => {
@@ -23,14 +23,14 @@ export const Route = createFileRoute('/deferred')({
       ),
       deferredPerson: slowServerFn({ data: 'Tanner Linsley' }),
       person: await personServerFn({ data: 'John Doe' }),
-    }
+    };
   },
   component: Deferred,
-})
+});
 
 function Deferred() {
-  const [count, setCount] = useState(0)
-  const { deferredStuff, deferredPerson, person } = Route.useLoaderData()
+  const [count, setCount] = useState(0);
+  const { deferredStuff, deferredPerson, person } = Route.useLoaderData();
 
   return (
     <div className="p-2">
@@ -58,5 +58,5 @@ function Deferred() {
         <button onClick={() => setCount(count + 1)}>Increment</button>
       </div>
     </div>
-  )
+  );
 }
