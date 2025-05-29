@@ -30,7 +30,7 @@ export const CoinvesterHomeInfo = () => {
         />
         <div
           className={
-            'flex w-[500px] flex-col gap-4 rounded-lg bg-zinc-100/60 p-4'
+            'flex w-[500px] flex-col gap-4 rounded-xl bg-zinc-50/60 p-4'
           }
         >
           {coinvester.map((investor) => {

@@ -15,3 +15,5 @@ export const CoinvesterHomeWrapper = styled(Box)`
   align-items: center;
   justify-content: center;
 `;
+
+export const ProjectHomeWrapper = styled(CoinvesterHomeWrapper)``;
