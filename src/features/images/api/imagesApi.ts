@@ -7,6 +7,16 @@ const imageToIdLink = {
   '6': 'https://go.zvuk.com/imgs/2023/04/17/08/5875303/89eebd61da6ba9adff572f39785be78b6c044751.jpg',
   '7': 'https://i.pinimg.com/736x/24/9e/6f/249e6f3d30c501d5595a3fa7c26f3838.jpg',
   '8': 'https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67aee50d0adcec18c21fd424_67aee6b2a6dcaa501c5ba3d9/scale_1200',
+  '9': 'https://p2.zoon.ru/preview/I5XvhGIonJOcG4dLkciScw/630x384x85/1/b/4/original_52c0048240c0886b7c8b8da5_6389da3a8a0211.75517707.jpg',
+  '10': 'src/icons/LeroyHastler.png',
+  '11': 'src/icons/Nix(poster).png',
+  '12': 'src/icons/GeorgyPapoiny.png',
+  '13': 'src/icons/Tolik(Project).png',
+  '14': 'src/icons/Tolik.png',
+  '15': 'https://habrastorage.org/getpro/habr/upload_files/7ff/d77/170/7ffd77170bbf07e6dfc30f34bbc8b6bb.webp',
+  '16': 'https://t3.ftcdn.net/jpg/05/71/63/88/360_F_571638853_vdsCjahGuqZ1SBeB8KYumYgQ8Esa7Drl.jpg',
+  '19': 'https://static.tildacdn.com/tild6332-3864-4231-a339-376239633166/-min.jpg',
+  '20': 'https://dvgups.ru/images/main/structure/UAT/OPiBT/Belozerova.jpg',
 };
 
 export const getImageLink = (imageId: number) => {

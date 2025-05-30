@@ -2,15 +2,19 @@ import { Swiper } from '~/shared/ui';
 import { SwiperProps } from '~/shared/ui/Swiper';
 import { ProjectCardTag } from '~/features/projects/model/Project.types';
 import { useMemo } from 'react';
+import { ProjectSlideItem } from '~/features/projects/ui/ProjectSlider/ProjectSlideItem';
+import { SwiperSlide } from 'swiper/react';
 
 export type ProjectSliderItem = {
+  uuid: string;
   projectImageId: number;
-  status: 'trending' | 'new' | 'ending';
+  status: 'trending' | 'new' | 'ending' | 'rising';
   description: string;
   name: string;
-  valuation: string;
+  valuation: number;
+  coinvesterInfo: string;
   investorsCount: number;
-  invested: number;
+  investment: number;
   tags: ProjectCardTag[];
   owner: {
     name: string;
@@ -28,7 +32,7 @@ export const ProjectSlider = ({
   items,
   step = 3,
   ...rest
-}: ProjectSliderItem) => {
+}: ProjectSliderProps) => {
   const prepareSlides = useMemo(() => {
     const slides = [];
 
@@ -40,15 +44,17 @@ export const ProjectSlider = ({
   }, [items, step]);
   return (
     <Swiper {...rest} className={'h-[592px]'}>
-      {prepareSlides.map((slide, index) => (
-        <SwiperSlide key={index}>
-          <div style={{ display: 'flex' }}>
-            {slide.map((item, idx) => (
-              <div key={idx}>{item}</div>
-            ))}
-          </div>
-        </SwiperSlide>
-      ))}
+      <>
+        {prepareSlides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className={'flex gap-4'}>
+              {slide.map((item, idx) => (
+                <ProjectSlideItem key={idx + item.uuid} item={item} />
+              ))}
+            </div>
+          </SwiperSlide>
+        ))}
+      </>
     </Swiper>
   );
 };

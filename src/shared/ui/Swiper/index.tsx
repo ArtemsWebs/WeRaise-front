@@ -1,6 +1,8 @@
-import { Swiper as BaseSwiper } from 'swiper';
 import { PropsWithChildren } from 'react';
-import { SwiperProps as BaseSwiperProps } from 'swiper/react';
+import {
+  SwiperProps as BaseSwiperProps,
+  Swiper as BaseSwiper,
+} from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -13,6 +15,7 @@ export const Swiper = ({ children, ...rest }: SwiperProps) => {
   return (
     <BaseSwiper
       slidesPerView={'auto'}
+      spaceBetween={0}
       pagination={{
         dynamicBullets: true,
         clickable: true,

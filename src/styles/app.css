@@ -80,7 +80,7 @@
                 0deg,
                 transparent,
                 transparent 30%,
-                rgba(0, 255, 255, 0.3)
+                rgba(224, 231, 255, 1)
         );
         transform: rotate(-45deg);
         transition: all 0.5s ease;
@@ -89,7 +89,7 @@
 
     .holographic-card:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        box-shadow: 0 0 20px rgba(224, 231, 255, 1)
     }
 
     .holographic-card:hover::before {
